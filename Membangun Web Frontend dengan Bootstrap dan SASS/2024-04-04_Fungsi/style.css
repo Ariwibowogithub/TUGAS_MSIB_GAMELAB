@@ -1,0 +1,25 @@
+h1 {
+  color: #007bff;
+  text-align: center;
+  padding-top: 30px;
+}
+
+p {
+  color: #6c757d;
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-align: center;
+  text-shadow: "rgba(0, 0, 0, 0.3) 2px";
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.motivation-content {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}/*# sourceMappingURL=style.css.map */

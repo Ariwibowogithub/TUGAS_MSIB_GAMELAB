@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue.js Transition Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+</head>
+<body>
+    <div id="example-1">
+        <button @click="toggleText">
+          klik aku
+        </button>
+        <transition name="slide-fade" appear>
+          <p v-if="show">Selamat datang di gamelab indonesia</p>
+          <p v-else>Raih Masa depan brillian dengan optimasi skills</p>
+        </transition>
+      </div>
+      
+      <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            show: true
+          }
+        },
+        methods: {
+          toggleText() {
+            this.show = !this.show;
+          }
+        }
+      });
+      app.mount('#example-1');
+      </script>
+      <style>
+        .slide-fade-enter-active, .slide-fade-leave-active {
+          transition: all .4s ease;
+        }
+        .slide-fade-enter-from, .slide-fade-leave-to {
+          transform: translateX(10px);
+          opacity: 0;
+        }
+      </style>
+</body>
+</html>

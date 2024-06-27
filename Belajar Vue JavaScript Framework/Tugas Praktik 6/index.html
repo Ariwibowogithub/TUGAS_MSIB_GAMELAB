@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Praktik 6</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<style>
+    h2 {
+        padding-left: 20px;
+        padding-top: 10px;
+    }
+    p {
+        padding-left: 20px;
+    }
+</style>
+<body>
+    <!-- -->
+    <div>
+        <h2>Ini adalah penerapan method pada vue JS </h2> <hr>
+        <p>Silahan ketika apapun dibawah ini: </p>
+    </div>
+    <!-- -->
+    <div id="app">
+         <input type="text" v-model="user_input">
+         <button @click="reverseString()">Klik aku!</button>
+         <p>Nama yang dibalik : {{ reversed_name }}</p>
+    </div>
+    <script>
+     const app = Vue.createApp({
+        data() {
+            return {
+                user_input: '',
+                reversed_name: ''
+            }
+        },
+         methods: {
+            reverseString() {
+                if(this.isInputEmpty()) {
+                    alert('Masukkan string yang akan diproses terlebih dahulu') } else {
+                        this.reversed_name = this.user_input.split('').reverse().join('')
+                    }
+                },
+                 isInputEmpty() {
+                    return this.user_input.length == 0;
+                }
+             }
+            }).mount('#app')
+    </script>
+
+
+    <!-- -->
+
+
+
+
+
+    <!-- -->
+
+
+
+      <!-- -->
+      <!-- -->
+      <!-- -->
+      
+      
+</body>
+</html>

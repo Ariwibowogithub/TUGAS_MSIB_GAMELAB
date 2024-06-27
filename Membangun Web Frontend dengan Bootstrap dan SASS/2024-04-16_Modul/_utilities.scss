@@ -1,0 +1,22 @@
+/* CSS utilitas seperti mixins atau fungsi */
+
+// Contoh mixin untuk membuat teks tengah
+@mixin center-text {
+    text-align: center;
+}
+
+// Contoh mixin untuk membuat teks berwarna merah
+@mixin red-text {
+    color: rgb(255, 255, 255);
+}
+
+// Contoh fungsi untuk mengubah ukuran font menjadi besar
+@function make-font-large($font-size) {
+    @return $font-size * 1.5;
+}
+
+// Contoh fungsi untuk mengubah ukuran font menjadi kecil
+@function make-font-small($font-size) {
+    @return $font-size * 0.8;
+}
+

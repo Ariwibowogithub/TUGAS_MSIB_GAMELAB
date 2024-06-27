@@ -1,0 +1,31 @@
+ // Variabel global
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+
+ //Gaya untuk judul h1
+h1 {
+  color: $primary-color;
+}
+
+ Gaya untuk judul h2
+h2 {
+  color: $secondary-color;
+}
+
+ // Variabel scope di dalam sebuah selector
+.container {
+  $background-color: #f8f9fa;
+  background-color: $background-color;
+
+ // Penggunaan variabel di dalam nested selector
+  p {
+    font-size: 16px;
+    color: $primary-color;
+  }
+}
+
+ //Penggunaan variabel globalclea
+.global-style {
+  background-color: $primary-color;
+  color: $secondary-color;
+}

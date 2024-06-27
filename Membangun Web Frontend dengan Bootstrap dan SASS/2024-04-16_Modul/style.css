@@ -1,0 +1,49 @@
+/* CSS dasar seperti reset dan variabel */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Atur gaya dasar untuk elemen-elemen HTML lainnya */
+/* CSS untuk tata letak */
+header {
+  background-color: #2b75ff;
+  color: #fff;
+  padding: 20px;
+}
+
+main {
+  padding: 20px;
+}
+
+footer {
+  background-color: #2b75ff;
+  color: #fff;
+  padding: 10px 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* CSS untuk komponen seperti header, footer, dll. */
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+/* CSS utilitas seperti mixins atau fungsi */
+body {
+  text-align: center;
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+}
+
+p {
+  font-size: 24px;
+}/*# sourceMappingURL=style.css.map */

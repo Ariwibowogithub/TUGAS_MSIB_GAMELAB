@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Praktik ke-3</title>
+    <!--script JS-->
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+    <!-- Menampilkan Nilai Index pada array -->
+    <div id="NA">
+        <h2>Daftar nama-nama temanku :</h2>
+        <p v-for="(friend, index) in friends">{{index + 1}}, {{friend}}</p>
+    </div>
+    <!--Menampilkan Nilai Index pada Object -->
+    <div id="VC3">
+        <h3> Detail Biodata Ari :</h3>
+        <p v-for="(value,key, index) in character"> {{index + 1}}) {{key}}: {{value}}</p>
+    </div>
+
+<!-- Script Vue JS Nilai Index pada array-->
+<script>
+    const NA = Vue.createApp ({
+    data() {
+        return {
+            friends : ['ayu','agus','nana','dwi'],
+        }
+    }
+}).mount('#NA')
+</script>
+ <!-- Script Vue JS Menampilkan Nilai Index pada Object -->
+    <script>
+        const VC3 = Vue.createApp ({
+            data() {
+                return {
+                    character : {
+                        nama: 'Ari',
+                        usia: '21',
+                        status:'mahasiswa'
+                    }
+                }
+            }
+        }).mount('#VC3')
+    </script>
+</body>
+</html>

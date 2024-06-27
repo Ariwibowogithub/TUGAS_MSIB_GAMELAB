@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layouting Product</title>
+</head>
+
+    <style>
+        h1 {
+            text-align: center;
+            color: blue;
+        }
+        body {
+        font-family: Arial, sans-serif;
+        margin: 20;
+        padding: 40;
+        background-color: #f0f0f0;
+        }
+
+        .product-list {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding: 10px;
+        }
+
+        .product-item {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 10px;
+        padding: 20px;
+        text-align: center;
+        width: 250px;
+        }
+
+        .product-item img {
+        display: block;
+        margin: 0 auto 15px;
+        max-width: 100%;
+        height: auto;
+        }
+
+        .product-item h2 {
+        margin: 0;
+        }
+
+        .product-item p {
+        margin: 10px 0;
+        }
+
+        .product-item button {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        }
+
+        .product-item button:hover {
+        background-color: #0056b3;
+        }
+        .product-item button.detail {
+            background-color: #02d03c;
+        }
+        .product-item button.detail:hover {
+            background-color: #ff7777;
+        }
+
+    </style>
+<body>
+    <h1 style="inline-size: 1;">Tampilan Produk Kami</h1>
+    <hr>
+
+    <div class="product-list">
+        <div class="product-item">
+          <img src="https://img.techarea.co.id/cara-foto-produk.webp" alt="Baju 1">
+          <h3>Minuman Nanas Segar</h3>
+          <p>Harga: Rp.100.000</p>
+          <button class="detail">Detils</button>
+          <button>Beli</button>
+        </div>
+        <div class="product-item">
+          <img src="https://img.techarea.co.id/cara-foto-produk.webp" alt="Baju 2">
+          <h3>Minuman Nanas Segar</h3>
+          <p>Harga: Rp.100.000</p>
+          <button class="detail">Detils</button>
+          <button>Beli</button>
+        </div>
+        <div class="product-item">
+          <img src="https://img.techarea.co.id/cara-foto-produk.webp" alt="Baju 3">
+          <h3>Minuman Nanas Segar</h3>
+          <p>Harga: Rp.100.000</p>
+          <button class="detail">Detils</button>
+          <button>Beli</button>
+        </div>
+        <div class="product-item">
+          <img src="https://img.techarea.co.id/cara-foto-produk.webp" alt="Baju 4">
+          <h3>Minuman Nanas Segar</h3>
+          <p>Harga: Rp.100.000</p>
+          <button class="detail">Detils</button>
+          <button>Beli</button>
+        </div>
+      </div>
+
+    
+</body>
+</html>

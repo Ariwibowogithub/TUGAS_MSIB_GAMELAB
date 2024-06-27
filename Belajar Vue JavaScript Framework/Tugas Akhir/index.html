@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tugas Akhir | Ari Wibowo</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- Conditional rendering -->
+    <h2 v-if="isLoggedIn">Welcome, {{ username }}!</h2>
+    <h2 v-else>Koleksi Foto Mantan Tervaforit </h2>
+    
+    <ul>
+      <!-- Looping data with delete and edit options -->
+      <li v-for="item in items" :key="item.id" class="item">
+        <span>{{ item.name }}</span>
+        <img :src="item.imageUrl" alt="Item Image" class="item-image">
+        <div class="item-buttons">
+          <button @click="editItem(item)">Edit</button>
+          <button @click="deleteItem(item)">Delete</button>
+        </div>
+      </li>
+    </ul>
+    
+    <!-- Input fields -->
+    <div class="input-container">
+      <input type="text" v-model="inputText" placeholder="Enter item name" class="input-field">
+      <input type="text" v-model="imageUrl" placeholder="Enter image URL" class="input-field">
+      <button @click="addItem" class="add-button">Add Item</button>
+    </div>
+
+    <!-- Transition -->
+    <transition name="fade">
+      <p v-if="showMessage" class="message">Message: {{ message }}</p>
+    </transition>
+  </div>
+
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          isLoggedIn: false,
+          username: 'John',
+          items: [
+            { id: 1, name: 'Anya Geraldine', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTYBwCHqolcxXJ5EPVv3NGs3SD7Xc9pCBXLc2UnDaoJg&s' },
+            { id: 2, name: 'Anya Geraldine', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTYBwCHqolcxXJ5EPVv3NGs3SD7Xc9pCBXLc2UnDaoJg&s'},
+            { id: 3, name: 'Anya Geraldine', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTYBwCHqolcxXJ5EPVv3NGs3SD7Xc9pCBXLc2UnDaoJg&s' }
+          ],
+          inputText: '',
+          imageUrl: '',
+          message: 'Hello, Vue!',
+          showMessage: false
+        };
+      },
+      methods: {
+        // Add new item to the list
+        addItem() {
+          if (this.inputText.trim() !== '' && this.imageUrl.trim() !== '') {
+            this.items.push({ id: this.items.length + 1, name: this.inputText, imageUrl: this.imageUrl });
+            this.inputText = '';
+            this.imageUrl = '';
+          }
+        },
+        // Delete item from the list
+        deleteItem(item) {
+          const index = this.items.findIndex(i => i.id === item.id);
+          if (index !== -1) {
+            this.items.splice(index, 1);
+          }
+        },
+        // Edit item in the list
+        editItem(item) {
+          const newName = prompt('Enter new name:', item.name);
+          if (newName !== null && newName.trim() !== '') {
+            item.name = newName;
+          }
+        }
+      }
+    });
+
+    app.mount('#app');
+  </script>
+
+  <style>
+    /* Transition */
+    .fade-enter-active, .fade-leave-active {
+      transition: opacity 0.5s;
+    }
+    .fade-enter, .fade-leave-to {
+      opacity: 0;
+    }
+
+    *{
+        text-align: center;
+    }
+    
+    /* Item styling */
+    .item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      text-align: center;
+    }
+    .item-image {
+      margin-right: 20px;
+      width: 80px;
+      height: 80px;
+      margin-left: 20px;
+    }
+    .item-buttons button {
+      margin-left: 5px;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    .item-buttons button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Input container styling */
+    .input-container {
+      margin-top: 20px;
+    }
+    .input-field {
+      margin-right: 10px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    .add-button {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #28a745;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .add-button:hover {
+      background-color: #218838;
+    }
+
+    /* Message styling */
+    .message {
+      margin-top: 10px;
+      font-style: italic;
+    }
+  </style>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Computed Property VueJS</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+</head>
+<body>
+  <div id="app">
+    <p>Masukkan Bilangan Pertama </p>
+    <input type="number" v-model="number1" placeholder="Masukkan bilangan 1"><br>
+    <p>Masukkan Bilangan Kedua </p>
+    <input type="number" v-model="number2" placeholder="Masukkan bilangan 2">
+    <div><br>
+        <button @click="calculate">Hitung</button>
+    </div>
+    <div>
+      <p v-if="showResult">Hasil Penjumlahan: {{ addition }}</p>
+      <p v-if="showResult">Hasil Pengurangan: {{ subtraction }}</p>
+      <p v-if="showResult">Hasil Pembagian: {{ division }}</p>
+      <p v-if="showResult">Hasil Perkalian: {{ multiplication }}</p>
+    </div>
+  </div>
+
+  <script>
+    Vue.createApp({
+      data() {
+        return {
+          number1: 0,
+          number2: 0,
+          showResult: false
+        };
+      },
+      computed: {
+        addition() {
+          return parseInt(this.number1) + parseInt(this.number2);
+        },
+        subtraction() {
+          return parseInt(this.number1) - parseInt(this.number2);
+        },
+        division() {
+          return parseInt(this.number1) / parseInt(this.number2);
+        },
+        multiplication() {
+          return parseInt(this.number1) * parseInt(this.number2);
+        }
+      },
+      methods: {
+        calculate() {
+          this.showResult = true;
+        }
+      }
+    }).mount('#app');
+  </script>
+</body>
+</html>

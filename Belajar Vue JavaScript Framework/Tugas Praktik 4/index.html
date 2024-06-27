@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementasi Attribut Bindding</title>
+
+     <!--script JS-->
+     <script src="https://unpkg.com/vue@3"></script>
+</head>
+
+    <style>
+        .text {
+        color: rgb(0, 0, 0);
+    
+        }
+        .text-red {
+            color: red;
+            font-weight: bold;
+        }
+        .text-blue {
+            color: blue;
+            font-weight: bold;
+        }
+        .text-grey {
+            color: grey;
+            font-weight: bold;
+        }
+        .text-yellow {
+            color: yellow;
+            font-weight: bold;
+        }
+        .font-weight-bold {
+            font-weight: bold;
+            font-weight: bold;
+        }
+        .text-success {
+            color: green;
+        }
+    </style>
+<body>
+    <!-- Single Class Binding -->
+    <div id="MH">
+        <h3 :class="text"> Ini adalah sebuah penerapan class pada vue JS : </>
+        
+    </div>
+
+    <!-- Multiple Class Binding  -->
+    <div id="ML">
+        <p :class="[textDanger, active]"> Aku Akan Berwarna Merah </p>
+        <p :class="[textPrimary, active]"> Aku Akan Berwarna Biru </p>
+        <p :class="[textSecondary, active]"> Aku Akan Berwarna Abu-Abu </p>
+        <p :class="[textWarning, active]"> Aku Akan Berwarna Kuning </p>
+    </div>
+    <!-- Class Binding berdasarkan Kondisi Tunggal -->
+    <div id="app">
+        <p :class="[boldFont, texthijau]"> Ini adalah warna hijau</p>
+
+    </div>
+    <!-- -->
+
+    <!-- Vue Instance Single Class Binding -->
+    <script>
+        const MH = Vue.createApp ({
+    data() {
+        return {
+            text: 'text',
+        }
+    }
+    }).mount('#MH')
+    </script>
+
+    <!-- Vue Instance multiple Class Binding -->
+    <script>
+        const ML = Vue.createApp ({
+            data(){ 
+             return {    
+                textDanger: 'text-red',  
+                textPrimary: 'text-blue', 
+                textSecondary: 'text-grey',   
+                textWarning: 'text-yellow', 
+                active: 'active'
+             }}
+            }).mount('#ML')
+    </script>
+    <!-- -->
+    <script>
+        const app = Vue.createApp ({
+    data() {
+        return {
+            boldFont: 'font-weight-bold',
+            texthijau: 'text-success'
+        }
+    }
+    }).mount('#app')
+    </script>
+    <!-- -->
+    <!-- -->
+    <!-- -->
+
+
+    
+</body>
+</html>

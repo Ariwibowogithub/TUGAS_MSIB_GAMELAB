@@ -1,0 +1,32 @@
+// Variabel warna
+$primary-color: blue;
+$secondary-color: green;
+$use-secondary-color: true;
+
+// Kondisi untuk latar belakang body
+body {
+    background-color: if($use-secondary-color, $secondary-color, $primary-color);
+}
+// Perulangan untuk membuat kotak
+@for $i from 1 through 3 {
+    .box-#{$i} {
+        width: 100px * $i;
+        height: 100px * $i;
+        background-color: darken($primary-color, 10% * $i);
+        margin-bottom: 20px;
+    }
+}
+h1 {
+    text-align: center;
+    font-weight: bold;
+    color: #ffffff ;
+}
+footer {
+    background-color: #dbdbdb;
+    color: #000000;
+    padding: 10px 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}

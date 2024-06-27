@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modul 2 Renderring Conditional</title>
+
+      <!--script JS-->
+      <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+    <!--Renderiing V-if-->
+
+    <!--
+    <div id="sun">
+        <p v-if="siang">☀️</p>
+    </div>
+    -->
+    <!--Renderiing V-Else-->
+    <div id="RR">
+        <p>Penerapan v-if dan else : </p>
+        <p v-if="panas">☀️</p>
+        <p v-else>🌙</p>
+    </div>
+
+    <!--Renderiing V-Show-->
+    <div id="RVS">
+        <p>Penerapan v-show : </p>
+        <p v-show="Matahari">☀️</p>
+        <p v-show="Matahari == false">🌙</p>
+    </div>
+    <div id="todo">
+        <template v-if="kegiatanku">
+            <h4>Kegiatanku Disiang Hari : </h4>
+            <ol>
+                <li>Mandi</li>
+                <li>Makan</li>
+                <li>elajar Ngoding</li>
+            </ol>
+        </template>
+    </div>
+
+    <!--Renderiing V-Else-if-->
+    <div id="app">
+        <p v-if="nilai > 90">Super!</p>
+        <p v-else-if="nilai >= 75">hebat!</p>
+        <p v-else>Belajar lebih giat!</p>
+    </div>
+    
+      <!--script-->
+       <!--
+    <script>
+        const sun = Vue.createApp ({
+            data() {
+                return {
+                    siang: true,
+                }
+            }
+        }).mount('#sun')
+    </script>
+    -->
+    <script>
+        const RR = Vue.createApp ({
+            data() {
+                return {
+                    panas: true,
+                }
+            }
+        }).mount('#RR')
+    </script>
+    <script>
+        const RVS = Vue.createApp ({
+            data() {
+                return {
+                    Matahari: true,
+                }
+            }
+        }).mount('#RVS')
+    </script>
+
+<script>
+    const todo = Vue.createApp ({
+        data() {
+            return {
+                kegiatanku: true,
+            }
+        }
+    }).mount('#todo')
+</script>
+
+  <script>
+    const app = Vue.createApp ({
+        data() {
+            return {
+                nilai:92,
+            }
+        }
+    }).mount('#app')
+</script>
+</body>
+</html>

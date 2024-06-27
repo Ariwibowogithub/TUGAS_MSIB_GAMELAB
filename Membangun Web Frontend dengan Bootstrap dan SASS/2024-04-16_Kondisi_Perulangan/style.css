@@ -1,0 +1,40 @@
+body {
+  background-color: green;
+}
+
+.box-1 {
+  width: 100px;
+  height: 100px;
+  background-color: #0000cc;
+  margin-bottom: 20px;
+}
+
+.box-2 {
+  width: 200px;
+  height: 200px;
+  background-color: #000099;
+  margin-bottom: 20px;
+}
+
+.box-3 {
+  width: 300px;
+  height: 300px;
+  background-color: #000066;
+  margin-bottom: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+footer {
+  background-color: #dbdbdb;
+  color: #000000;
+  padding: 10px 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */

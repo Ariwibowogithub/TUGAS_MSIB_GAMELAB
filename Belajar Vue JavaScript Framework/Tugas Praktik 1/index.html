@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <!--script JS-->
+    <script src="https://unpkg.com/vue@3"></script>
+     <!--
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    -->
+</head>
+<body>
+    <div id="textApp">
+        <span>Silhakan Ketik Nama Disini :</span>
+        <input type="text" v-model="message"> <br>
+        <h3>{{ message }}</h3>
+        <!--
+        <input type="checkbox" v-model="checked">
+        <span>{{ checked }}</span>
+         -->
+    </div>
+    <div id="app">
+       
+         <P>Jurusan Yang Di Pilih : {{checked }}</P>
+         <div>
+            <input type="checkbox" value="Web" v-model="checked">
+            <span>Web Developer</span>
+         </div>
+         <div>
+            <input type="checkbox" value="Front-End" v-model="checked">
+            <span>Front-End Developer</span>
+         </div>
+    </div>
+
+    <!-- Data Bidding pada input radio-->
+    <div id="RadioApp">
+        <p>Inputan yang dipilih : {{pilihan}} </p>
+        <div>
+            <input type="radio" value="laki" v-model="pilihan">
+            <span>laki-Laki</span> 
+        </div>
+        <div>
+            <input type="radio" value="Cewek" v-model="pilihan">
+            <span>Perempuan</span> 
+        </div>
+    </div>
+
+     <!-- Data Bidding pada input Select-->
+     <div id="SelectApp">
+        <p>Pilih Kota Favoritmu : {{chose}} </p>
+        <select v-model="chose">
+            <option disabled value="">Pilih Kota Favoritmu</option>
+            <option>Jakarta</option>
+            <option>Semarang</option>
+            <option>Surabaya</option>
+            <option>Bandung</option>
+        </select>
+     </div>
+
+    <!--script vue js message-->
+    <script>
+        const textApp = Vue.createApp({
+            data() {
+                return {
+                     //checked: [],
+                    message: 'Gamelab Idonesia'
+                }
+            }
+        }).mount('#textApp')
+    </script>
+
+    <!--script vue js checked-->
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    checked: [],
+                    
+                 // message: 'Hallo Gamelab'
+                }
+            }
+        }).mount('#app')
+    </script>
+      <!--script vue js untuk bidding radio-->
+    <script>
+        const RadioApp = Vue.createApp({
+            data() {
+                return {
+                    pilihan: '',
+                    
+                 // message: 'Hallo Gamelab'
+                }
+            }
+        }).mount('#RadioApp')
+    </script>
+
+     <!--script vue js untuk bidding Select-->
+     <script>
+        const SelectApp = Vue.createApp({
+            data() {
+                return {
+                    chose: '',
+                    
+                 // message: 'Hallo Gamelab'
+                }
+            }
+        }).mount('#SelectApp')
+    </script>
+
+</body>
+</html>
